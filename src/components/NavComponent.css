@@ -1,3 +1,11 @@
 .selected{
+    color: brown !important;
+}
+
+.tab{
+    color: #fff;
+    text-decoration: none;
+}
+.tab:hover{
     color: brown;
 }

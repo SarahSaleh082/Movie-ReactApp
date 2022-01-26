@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstace = axios.create({
-  baseURL: "https://api.themoviedb.org/3/discover/movie",
+  baseURL: "https://api.themoviedb.org/3/movie",
   params: {
     api_key: '60092b7ad34698fddfac65cb5743e4e1'
   }

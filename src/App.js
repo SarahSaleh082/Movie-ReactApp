@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Movies from "./pages/Movies";
 import NavComponent from "./components/NavComponent";
+import MovieDetails from "./pages/MovieDetails";
 function App() {
   return (
     <div>
@@ -12,7 +13,9 @@ function App() {
       <Switch>
           <Route path={"/register"} exact component={Register}/>
           <Route path={"/login"} exact component={Login}/>
+          <Route path={"/"} exact component={Movies}/>
           <Route path={"/movies"} exact component={Movies}/>
+          <Route path={"/details/:id"} exact component={MovieDetails} />
           <Route path={"*"} exact component={NotFound}/>
 
       </Switch>
