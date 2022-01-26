@@ -12,7 +12,7 @@ function App() {
       <Switch>
           <Route path={"/register"} exact component={Register}/>
           <Route path={"/login"} exact component={Login}/>
-          <Route path={"/"} exact component={Movies}/>
+          <Route path={"/movies"} exact component={Movies}/>
           <Route path={"*"} exact component={NotFound}/>
 
       </Switch>
