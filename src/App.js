@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound";
 import Movies from "./pages/Movies";
 import NavComponent from "./components/NavComponent";
 import MovieDetails from "./pages/MovieDetails";
+import Favourites from "./pages/Favourites";
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
           <Route path={"/login"} exact component={Login}/>
           <Route path={"/"} exact component={Movies}/>
           <Route path={"/movies"} exact component={Movies}/>
+          <Route path={"/favourite"} exact component={Favourites}/>
           <Route path={"/details/:id"} exact component={MovieDetails} />
           <Route path={"*"} exact component={NotFound}/>
 

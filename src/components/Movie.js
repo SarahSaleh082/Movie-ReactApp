@@ -1,8 +1,18 @@
-import React from "react";
-import { Card, Button, Col } from "react-bootstrap";
+import React,{useState} from "react";
+import { Card, Button,Badge, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai';
+import { useSelector, useDispatch } from "react-redux";
+import { changeFavouriteAction } from "../store/actions/favouriteAction";
+
 export default function Movie(props) {
   console.log(props.movie);
+  const [toggleLike, setToggleHeart] = useState(false);
+  const dispatch = useDispatch()
+  const handelToggle = ()=>{
+    dispatch(changeFavouriteAction(props.movie))
+    setToggleHeart(!toggleLike);
+  }
   return (
     
     <Col lg={4}>
@@ -14,7 +24,12 @@ export default function Movie(props) {
       <Card.Body>
         <Card.Title>{props.movie.title}</Card.Title>
         <Card.Text>{props.movie.overview}</Card.Text>
-        <Link to={`/details/${props.movie.id}`}><Button variant="primary">Show Details</Button></Link>
+        <div className="d-flex justify-content-between">
+          <Link to={`/details/${props.movie.id}`}><Button variant="primary">Show Details</Button></Link>
+          <span className="heart" onClick={handelToggle}>{
+            toggleLike? <AiFillHeart color="red"  size={25} /> : <AiOutlineHeart color="red"  size={25} />
+          }</span >
+        </div>
       </Card.Body>
     </Card>
     </Col>
