@@ -1,0 +1,12 @@
+.input-group{
+    width: 30%;
+    margin: 0 auto;
+}
+.input-group input{
+    background-color: #0e1217;
+    border: none;
+    color: #ffff;
+}
+.input-group  span{
+    cursor: pointer;
+}
