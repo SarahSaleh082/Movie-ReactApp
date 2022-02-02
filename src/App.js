@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -6,9 +7,14 @@ import Movies from "./pages/Movies";
 import NavComponent from "./components/NavComponent";
 import MovieDetails from "./pages/MovieDetails";
 import Favourites from "./pages/Favourites";
+import { LanguageContext } from "./context/languageContext";
+
 function App() {
+  const [ contextLang , setContextLang ] = useState('en')
   return (
     <div>
+      <LanguageContext.Provider value={{contextLang , setContextLang}}>
+
       <BrowserRouter>
       <NavComponent />
       <Switch>
@@ -23,6 +29,8 @@ function App() {
       </Switch>
         
       </BrowserRouter>
+      </LanguageContext.Provider>
+
       
     </div>
   );

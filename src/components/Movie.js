@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeFavouriteAction } from "../store/actions/favouriteAction";
 
 export default function Movie(props) {
-  console.log(props.movie);
+  // console.log(props.movie);
   const [toggleLike, setToggleHeart] = useState(false);
   const dispatch = useDispatch()
   const handelToggle = ()=>{
@@ -27,7 +27,7 @@ export default function Movie(props) {
         <div className="d-flex justify-content-between">
           <Link to={`/details/${props.movie.id}`}><Button variant="primary">Show Details</Button></Link>
           <span className="heart" onClick={handelToggle}>{
-            toggleLike? <AiFillHeart color="red"  size={25} /> : <AiOutlineHeart color="red"  size={25} />
+            toggleLike? <AiFillHeart color="#db2e2e"  size={25} /> : <AiOutlineHeart color="#db2e2e"  size={25} />
           }</span >
         </div>
       </Card.Body>
